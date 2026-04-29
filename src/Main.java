@@ -20,7 +20,7 @@ public class Main {
                 }
                 try {
                     phone = Integer.parseInt(scan.nextLine());
-                } catch (NumberFormatException) {
+                } catch (NumberFormatException e) {
                     System.out.println("Invalid Number");
                     continue;
                 }
