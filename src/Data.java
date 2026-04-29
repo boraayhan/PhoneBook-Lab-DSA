@@ -1,7 +1,9 @@
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Data {
     ArrayList<Contact> contacts;
+    Serializer serializer = new CSVSerializer();
 
     public Data(){
         ArrayList<Contact> contacts = new ArrayList<>();
@@ -32,5 +34,21 @@ public class Data {
             }
         }
         return -1;
+    }
+
+    public void serialize() {
+        try {
+            serializer.write(contacts);
+        } catch (IOException e) {
+            System.out.println("Failed to write to disk");
+        }
+    }
+
+    public void load() {
+        try {
+            contacts = serializer.read();
+        } catch (IOException e) {
+            System.out.println("Failed to read from disk");
+        }
     }
 }
