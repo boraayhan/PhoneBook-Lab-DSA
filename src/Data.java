@@ -37,6 +37,24 @@ public class Data {
         return -1;
     }
 
+    public boolean containsName(String name) {
+        for(Contact contact : contacts) {
+            if(contact.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean containsNumber(int num) {
+        for(Contact contact : contacts) {
+            if(contact.getNumber() == num) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void serialize() {
         try {
             serializer.write(contacts);
