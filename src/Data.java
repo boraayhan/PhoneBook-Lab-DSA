@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Data {
-    ArrayList<Contact> contacts;
+    ArrayList<Contact> contacts = new ArrayList<>();
     Serializer serializer = new CSVSerializer();
 
     public Data(){
@@ -53,5 +53,5 @@ public class Data {
         }
     }
 
-    public void edit()
+    public void edit() {}
 }

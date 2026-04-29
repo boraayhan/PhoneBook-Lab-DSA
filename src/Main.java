@@ -14,6 +14,7 @@ public class Main {
             if (answer == 1){
                 System.out.println("Add a name and phone number:");
                 name = scan.nextLine();
+                scan.nextLine();
                 phone = scan.nextInt();
                 Contact c = new Contact(name, phone);
                 d.add(c);
@@ -25,6 +26,7 @@ public class Main {
 
             if (answer == 3) {
                 d.serialize();
+                return;
             }
 
             if (answer == 4){
