@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Welcome to the phonebook!");
+        String name;
+        int phone;
+        Data d = new Data();
+        while(true){
+            System.out.println("Press 1 to add, 2 to View, 3 to Exit, 4 to Search, and 5 to Delete");
+            int answer = scan.nextInt();
+            if (answer == 1){
+                System.out.println("Add a name and phone number:");
+                name = scan.nextLine();
+                phone = scan.nextInt();
+                Contact c = new Contact(name, phone);
+                d.add(c);
+            }
+
+            if (answer == 2){
+                d.viewAll();
+            }
+
+            if (answer == 4){
+                System.out.println("Enter a name or part of a name:");
+                name = scan.nextLine();
+                d.search(name);
+            }
+            if (answer == 5){
+                System.out.println("Give a name and phone number to delete:");
+                name = scan.nextLine();
+                phone = scan.nextInt();
+                Contact c = new Contact(name, phone);
+                d.delete(c);
+            }
+        }
+    }
+}
