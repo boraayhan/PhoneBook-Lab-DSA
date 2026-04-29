@@ -24,6 +24,10 @@ public class Main {
                     System.out.println("Invalid Number");
                     continue;
                 }
+                if(d.containsName(name) || d.containsNumber(phone)) {
+                    System.out.println("Duplicate values");
+                    continue;
+                }
                 Contact c = new Contact(name, phone);
                 d.add(c);
             }
