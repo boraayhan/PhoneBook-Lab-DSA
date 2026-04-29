@@ -18,6 +18,9 @@ public class Data {
         for (Contact contact : contacts) {
             System.out.println(contact.getName() + " " + contact.getNumber());
         }
+        if(contacts.isEmpty()) {
+            System.out.println("No entries found! Press 1 to add a new one!");
+        }
     }
     public String delete(Contact c){
         for (int i = 0; i < contacts.size(); i++){
