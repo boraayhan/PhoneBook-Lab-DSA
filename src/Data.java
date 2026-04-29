@@ -75,7 +75,7 @@ public class Data {
     public void edit(String search, String n, int p) {
         int placement = -1;
         for (int i = 0; i < contacts.size(); i++) {
-            if (contacts.get(i).getName().equals(n)) {
+            if (contacts.get(i).getName().equals(search)) {
                 placement = i;
             }
         }
